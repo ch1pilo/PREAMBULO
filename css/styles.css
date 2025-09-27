@@ -1,0 +1,338 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #ecf0f1;
+    min-height: 100vh;
+    position: relative;
+}
+
+i{
+    font-size: 30px;
+    color: #ecf0f1;
+    transition: all 0.3s ease;
+}
+
+.redes{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px;
+}
+
+.redes i:hover {
+    color: #3498db;
+    transform: translateY(-3px);
+    text-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+header{
+    padding: 30px 20px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+
+}
+
+img{
+    width: 98%;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    filter: brightness(70%) contrast(110%);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.02);
+    filter: brightness(80%) contrast(115%);
+}
+
+.card{
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para el carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 25px 15px;
+    background: rgba(36, 57, 78, 0.938);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(127, 140, 141, 0.3);
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+    gap: 0;
+}
+
+.card {
+    min-width: 100%;
+    height: 350px;
+    box-sizing: border-box;
+    padding: 25px;
+    text-align: center;
+    background: linear-gradient(145deg, #34495e 0%, #2c3e50 100%);
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border: 1px solid rgba(127, 140, 141, 0.2);
+}
+
+.card p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ecf0f1;
+    line-height: 1.6;
+    margin-top: 15px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.carousel-btn {
+    background: rgba(52, 152, 219, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 0 15px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: #ecf0f1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:hover {
+    background: rgba(41, 128, 185, 1);
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: rgba(189, 195, 199, 0.5);
+    margin: 0 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator.active {
+    background: #3498db;
+    transform: scale(1.2);
+    border: 2px solid #ecf0f1;
+}
+
+.indicator:hover {
+    background: #3498db;
+    transform: scale(1.1);
+}
+
+.baner .contexto{
+    position: absolute;
+    width: 35%;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    color: #ecf0f1;
+    font-weight: 600;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    border-bottom: solid 3px #3498db;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    background: rgba(44, 62, 80, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+}
+
+.baner p{
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+h1, h2, .contenedor p {
+    text-align: center;
+}
+
+.contenedor{
+    padding: 30px 20px;
+    background: rgba(36, 57, 78, 0.938);
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(127, 140, 141, 0.2);
+}
+
+h1{
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h2{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3498db;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.contenedor p {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #bdc3c7;
+}
+
+footer{
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border-top: 1px solid rgba(127, 140, 141, 0.3);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Efectos de partículas mejorados */
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 20px 15px;
+        height: 450px;
+    }
+    
+    .carousel-container {
+        height: 500px;
+        padding: 15px 10px;
+        margin-top: 20px;
+    }
+    
+    h1 {
+        font-size: 3rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    .baner .contexto {
+        width: 80%;
+        left: 10%;
+        padding: 15px;
+    }
+    
+    .card p {
+        font-size: 1.1rem;
+    }
+    
+    .carousel-btn {
+        margin-top: 10px;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 400px;
+        background: none;
+    }
+    .card{
+        height: 310px;
+        padding: 5px;
+        background: none;
+        border: none;
+    }
+
+    .carousel-controls{
+        margin-top: 5px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contenedor p {
+        font-size: 1.1rem;
+    }
+    
+    .redes {
+        gap: 15px;
+    }
+    
+    i {
+        font-size: 25px;
+    }
+}

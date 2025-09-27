@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="particles.js is a lightweight JavaScript library for creating particles.">
+    <meta name="author" content="Vincent Garreau" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Prime Build Works LTD - Coming Soon</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylejs.css">
+</head>
+<body>
+    <header>
+        <div class="baner">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="card">
+                        <img src="img/descarga (2).jpeg" alt="Porcelain tiles">
+                        <div class="contexto">
+                            <p>Modern designs tailored to your needs - We guarantee quality and safety</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/casa.png" alt="Granite">
+                        <div class="contexto">
+                            <p>Premium granite selection for elegant and durable surfaces</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/baño.png" alt="Interior design">
+                        <div class="contexto">
+                            <p>Creative interior designs that transform your living spaces</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="img/20250926_2109_image.png" alt="Exterior design">
+                        <div class="contexto">
+                            <p>Stunning exterior designs that enhance your property's appeal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="contenedor">
+        <h1>Coming Soon</h1>
+        <h2>Prime Build Works LTD</h2>
+        <p>We are working to provide you with the best experience. Stay tuned for updates!</p>
+
+        <div class="redes">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-whatsapp"></i>
+        </div>
+    </div>
+     <div id="particles-js"></div>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+
+    <footer>
+        <p>
+            Copyright © 2025 primebuildworks.ca - All rights reserved.
+        </p>
+    </footer>
+
+   
+    <!-- JavaScript para el carrusel -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.querySelector('.carousel');
+            const cards = document.querySelectorAll('.card');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const indicators = document.querySelectorAll('.indicator');
+            
+            let currentIndex = 0;
+            const totalCards = cards.length;
+            
+            // Función para actualizar el carrusel
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // Actualizar indicadores
+                indicators.forEach((indicator, index) => {
+                    if (index === currentIndex) {
+                        indicator.classList.add('active');
+                    } else {
+                        indicator.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Evento para botón siguiente
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % totalCards;
+                updateCarousel();
+            });
+            
+            // Evento para botón anterior
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+                updateCarousel();
+            });
+            
+            // Eventos para indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', function() {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            // Carrusel automático (opcional)
+            let autoSlide = setInterval(function() {
+                currentIndex = (currentIndex + 1) % totalCards;
+                updateCarousel();
+            }, 5000); // Cambia cada 5 segundos
+            
+            // Pausar el carrusel automático al hacer hover
+            const carouselContainer = document.querySelector('.carousel-container');
+            carouselContainer.addEventListener('mouseenter', function() {
+                clearInterval(autoSlide);
+            });
+            
+            carouselContainer.addEventListener('mouseleave', function() {
+                autoSlide = setInterval(function() {
+                    currentIndex = (currentIndex + 1) % totalCards;
+                    updateCarousel();
+                }, 5000);
+            });
+        });
+    </script>
+
+    <!-- stats.js -->
+    <script>
+      var count_particles, stats, update;
+      stats = new Stats;
+      stats.setMode(0);
+      stats.domElement.style.position = 'absolute';
+      stats.domElement.style.left = '0px';
+      stats.domElement.style.top = '0px';
+      document.body.appendChild(stats.domElement);
+      count_particles = document.querySelector('.js-count-particles');
+      update = function() {
+        stats.begin();
+        stats.end();
+        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+          count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+        }
+        requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    </script>
+</body>
+</html>
