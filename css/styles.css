@@ -302,9 +302,15 @@ footer{
     header {
         height: auto;
         padding: 20px 15px;
-        height: 450px;
+        justify-content: start;
     }
-    
+
+    header p{
+        font-size: 28px;
+    }
+    header img{
+       left: -15px;
+    }
     .carousel-container {
         height: 500px;
         padding: 15px 10px;
